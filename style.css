@@ -1,0 +1,86 @@
+body {
+    font-family: 'Josefin Sans', sans-serif; /* Usar Josefin Sans para el texto */
+}
+
+h1 {
+    font-family: 'josefin Sans', sans-serif; /* Aplica la fuente "Gelica" */
+    font-size: 2.5em;
+  color:#333;
+}
+.calculadora {
+    max-width: 400px;
+    margin: auto;
+    background-color: #f2d7a8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 1.8em;
+    color: #e63946;
+}
+
+h1 span {
+    color: #e63946;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 2px solid #e63946;
+    border-radius: 5px;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #e63946;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #b84c23;
+}
+
+.resultado {
+    margin-top: 20px;
+}
+
+.porcentaje {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.mensaje {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #b84c23;
+}
+
+.detalle {
+    font-size: 0.9em;
+    color: #333;
+}
