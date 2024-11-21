@@ -1,43 +1,77 @@
+document.querySelector(".botonResultados").addEventListener("click", calcularCompatibilidad);
+
 function calcularCompatibilidad() {
-    const nombre = document.getElementById('nombre').value.toLowerCase();
-    const nombreEspecial = document.getElementById('nombreEspecial').value.toLowerCase();
+    // Obtener los valores ingresados por el usuario
+    const tuSigno = document.getElementById("tu-signo").value.toLowerCase();
+    const suSigno = document.getElementById("su-signo").value.toLowerCase();
+    const tuEdad = parseInt(document.querySelectorAll(".edadEncuesta")[0].value, 10) || 0;
+    const suEdad = parseInt(document.querySelectorAll(".edadEncuesta")[1].value, 10) || 0;
+    const tuCaracter = document.getElementById("que-reconoce").value.toLowerCase();
+    const suCaracter = document.getElementById("esa-persona").value.toLowerCase();
+    const tuColor = document.getElementById("micolor-favorito").value.toLowerCase();
+    const suColor = document.getElementById("sucolor-favorito").value.toLowerCase();
 
-    
-    if (!nombre || !nombreEspecial) {
-        alert("Por favor, ingresa ambos nombres.");
-        return;
-    }
+    let compatibilidad = 0;
 
-    //Porcentaje de compatibilidad basado en los nombres
-    let compatibilidad = (nombre.length * nombreEspecial.length) % 100;
+    // Compatibilidad de signos
+    const compatibilidadSignos = {
+        aries: ["leo", "sagitario", "aries"],
+        tauro: ["virgo", "capricornio", "tauro"],
+        géminis: ["libra", "acuario", "géminis"],
+        cáncer: ["escorpio", "piscis", "cáncer"],
+        leo: ["aries", "sagitario", "leo"],
+        virgo: ["tauro", "capricornio", "virgo"],
+        libra: ["géminis", "acuario", "libra"],
+        escorpio: ["cáncer", "piscis", "escorpio"],
+        sagitario: ["aries", "leo", "sagitario"],
+        capricornio: ["tauro", "virgo", "capricornio"],
+        acuario: ["géminis", "libra", "acuario"],
+        piscis: ["cáncer", "escorpio", "piscis"],
+    };
 
-   
-    const resultado = document.getElementById('resultado');
-    const porcentajeElem = resultado.querySelector('.porcentaje');
-    const mensajeElem = resultado.querySelector('.mensaje');
-    const detalleElem = resultado.querySelector('.detalle');
-
-    porcentajeElem.textContent = `${compatibilidad}%`;
-    
-    if (compatibilidad > 80) {
-        mensajeElem.textContent = "¡Amor verdadero!";
-        detalleElem.textContent = "Parece que ustedes están destinados a ser una pareja legendaria de los 70s.";
-    } else if (compatibilidad > 50) {
-        mensajeElem.textContent = "Una conexión especial";
-        detalleElem.textContent = "Podrían tener una historia de amor digna de una película retro.";
-    } else if (compatibilidad > 20) {
-        mensajeElem.textContent = "Amigos con potencial";
-        detalleElem.textContent = "Tal vez aún falta un poco de magia, ¡pero la amistad es un gran inicio!";
+    if (compatibilidadSignos[tuSigno]?.includes(suSigno)) {
+        compatibilidad += 40;
     } else {
-        mensajeElem.textContent = "Solo amistad";
-        detalleElem.textContent = "Aunque su relación se quede en la Friendzone, muchos amores nacen de la amistad. ¡Quién sabe! Pueden forjar una buena amistad, llena de complicidad y risas.";
+        compatibilidad += 20;
     }
 
-    resultado.style.display = 'block';
-}
+    // Compatibilidad de edad
+    const diferenciaEdad = Math.abs(tuEdad - suEdad);
+    if (diferenciaEdad <= 2) {
+        compatibilidad += 20;
+    } else if (diferenciaEdad <= 5) {
+        compatibilidad += 10;
+    }
 
-function limpiar() {
-    document.getElementById('nombre').value = '';
-    document.getElementById('nombreEspecial').value = '';
-    document.getElementById('resultado').style.display = 'none';
+    // Compatibilidad de características
+    if (tuCaracter === suCaracter) {
+        compatibilidad += 20;
+    }
+
+    // Compatibilidad de colores favoritos
+    if (tuColor === suColor) {
+        compatibilidad += 20;
+    }
+
+    // Calcular porcentaje final
+    const porcentajeResultado = Math.min(compatibilidad, 100);
+
+    // Mostrar resultado
+    const resultadoTexto = document.querySelector(".porcentajeResultado");
+    resultadoTexto.textContent = `${porcentajeResultado}%`;
+
+    // Añadir animación
+    resultadoTexto.classList.remove("porcentajeAnimado");
+    void resultadoTexto.offsetWidth; // Reinicia la animación
+    resultadoTexto.classList.add("porcentajeAnimado");
+
+    // Mostrar mensaje adicional
+    const textoResultado = document.querySelector(".textoResultado");
+    if (porcentajeResultado >= 80) {
+        textoResultado.textContent = "¡Son el uno para el otro!";
+    } else if (porcentajeResultado >= 50) {
+        textoResultado.textContent = "Podrían ser compatibles con algo de esfuerzo.";
+    } else {
+        textoResultado.textContent = "Tal vez una bonita amistad sea lo ideal.";
+    }
 }
