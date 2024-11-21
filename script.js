@@ -60,9 +60,9 @@ function calcularCompatibilidad() {
     const resultadoTexto = document.querySelector(".porcentajeResultado");
     resultadoTexto.textContent = `${porcentajeResultado}%`;
 
-    // Añadir animación
+    // Reiniciar la animación
     resultadoTexto.classList.remove("porcentajeAnimado");
-    void resultadoTexto.offsetWidth; // Reinicia la animación
+    void resultadoTexto.offsetWidth; 
     resultadoTexto.classList.add("porcentajeAnimado");
 
     // Mostrar mensaje adicional
@@ -73,5 +73,20 @@ function calcularCompatibilidad() {
         textoResultado.textContent = "Podrían ser compatibles con algo de esfuerzo.";
     } else {
         textoResultado.textContent = "Tal vez una bonita amistad sea lo ideal.";
-    }
+    }
+}
+
+document.querySelector(".botonProbar").addEventListener("click", limpiarFormulario);
+
+function limpiarFormulario() {
+    // Limpiar los campos de texto
+    document.querySelectorAll("input[type='text']").forEach(input => input.value = "");
+    document.querySelectorAll("input[type='number']").forEach(input => input.value = "");
+    
+    // Restablecer los selectores a su valor por defecto
+    document.querySelectorAll("select").forEach(select => select.selectedIndex = 0);
+    
+    // Restablecer los resultados mostrados
+    document.querySelector(".porcentajeResultado").textContent = "0%";
+    document.querySelector(".textoResultado").textContent = "Aunque su relación se queda en la Friendzone, muchos amores nacen de la amistad. ¡Quién sabe! Pueden forjar una buena amistad, llena de complicidad y risas.";
 }
