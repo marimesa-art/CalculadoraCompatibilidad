@@ -5,35 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Amor al estilo de los 70s</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=The+Augusta&display=swap" rel="stylesheet">
-
-
+    <link rel="stylesheet" href="https://use.typekit.net/abp7ohc.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculadora">
-        <h1>¡Descubre <span>tu amor</span> al estilo de los 70s!</h1>
-        <p>Los años 70 fueron una <strong>época de amores intensos, libres y, algunos, eternos.</strong> Eran tiempos en que el amor se expresaba sin reservas, con la intasddensidad y el brillo de las luces de una discoteca.</p>
-        <p>¿Será tu historia de amor solo una chispa pasajera o el inicio de una conexión duradera?</p>
-
-        <form id="calculadoraForm">
-            <label for="nombre">Tu nombre</label>
-            <input type="text" id="nombre" name="nombre" required>
-
-            <label for="nombreEspecial">Nombre de esa persona especial</label>
-            <input type="text" id="nombreEspecial" name="nombreEspecial" required>
-
-            <div class="botones">
-                <button type="button" onclick="calcularCompatibilidad()">Resultado</button>
-                <button type="button" onclick="limpiar()">Probar con otros nombres</button>
-            </div>
-        </form>
-
-        <div id="resultado" class="resultado">
-            <p class="porcentaje">0%</p>
-            <p class="mensaje">Solo amistad</p>
-            <p class="detalle">Aunque su relación se quede en la Friendzone, muchos amores nacen de la amistad. ¡Quién sabe! Pueden forjar una buena amistad, llena de complicidad y risas.</p>
+    <section class="portada">
+        <img src="img/titulo.png" alt="" class="imagenTitulo">
+        <img src="img/beso.png" alt="" class="besoPortada">
+        <p>
+            Los años 70 fueron una época de amores intensos, libres y, algunos, eternos. Eran tiempos en que el amor se expresaba sin reservas, con la intensidad y el brillo de las luces de una discoteca.
+        </p>
+        <p>
+            ¿Será tu historia de amor solo una chispa pasajera o el inicio de una conexión duradera? ¡Descubrelo ahora!
+        </p>
+        <img src="img/bandera.png" alt="" class="banderaPortadabajo">
+    </section>
+    <section class="seccionNombres">
+        <p>
+            Primero que todo, escribe tu nombre y el de esa persona especial.
+        </p>
+        <div>
+        <h3>Tu nombre</h3>
+        <input type="text" class="botonNombre" placeholder="Nombre">
+        <h3>Nombre de esa persona especial</h3>
+        <input type="text" class="botonNombre" placeholder="Nombre">
+        <img src="img/beso.png" alt="" class="besoNombres">
+        <img src="img/Flores_decorar.png" alt="" class="floresNombres">
         </div>
-    </div>
+        <button type="button" class="botonResponde">Ahora, responde</button>
+    </section>
+    <main class="encuestas">
+        <div class="cuadroRojo">
+            <img src="img/numerouno.png" alt="" class="unoEncuesta">
+            <p>Escribe tu edad y la de esa persona especial</p>
+            <h2>Tu edad</h2>
+            <input type="number" class="edadEncuesta" placeholder="00">
+            <h2>Su edad</h2>
+            <input type="number" class="edadEncuesta" placeholder="00">
+        </div>
+        <div class="cuadroBeige">
+            <img src="img/numerodos.png" alt="" class="dosEncuesta">
+            <p>Selecciona tu signo zodiacal y el de esa persona especial</p>
+            <h2>Tu signo zodiacal</h2>
+             <label for="tu-signo"></label>
+              <select id="tu-signo" class="tusignoEncuesta">
+                <option value="aries">Aries</option>
+                <option value="tauro">Tauro</option>
+                <option value="géminis">Géminis</option>
+                <option value="cáncer">Cáncer</option>
+                <option value="leo">Leo</option>
+                <option value="virgo">Virgo</option>
+                <option value="libra">Libra</option>
+                <option value="escorpio">Escorpio</option>
+                <option value="sagitario">Sagitario</option>
+                <option value="capricornio">Capricornio</option>
+                <option value="acuario">Acuario</option>
+                <option value="piscis">Piscis</option>
+            </select>
+            <h2>Su signo zodiacal</h2>
+            <label for="su-signo"></label>
+             <select id="su-signo" class="susignoEncuesta">
+               <option value="aries">Aries</option>
+               <option value="tauro">Tauro</option>
+               <option value="géminis">Géminis</option>
+               <option value="cáncer">Cáncer</option>
+               <option value="leo">Leo</option>
+               <option value="virgo">Virgo</option>
+               <option value="libra">Libra</option>
+               <option value="escorpio">Escorpio</option>
+               <option value="sagitario">Sagitario</option>
+               <option value="capricornio">Capricornio</option>
+               <option value="acuario">Acuario</option>
+               <option value="piscis">Piscis</option>
+            </select>
+        </div>
+
+        <div class="cuadroAmarillo">
+        <img src="img/numerotres.png" alt="" class="tresEncuesta">
+        <p>
+            Selecciona la opción que más te identifique
+        </p>
+        <h2>
+            Reconozco que soy
+        </h2>
+        <label for="que-reconoce"></label>
+         <select id="que-reconoce" class="reconoceEncuesta">
+           <option value="aries">Curioso/a</option>
+           <option value="tauro">Tierno/a</option>
+           <option value="géminos">Gracioso/a</option>
+           <option value="cáncer">Aburrido/a</option>
+           <option value="leo">Sociable</option>
+           <option value="virgo">Inteligente</option>
+           <option value="libra">Rebelde</option>
+        </select>
+
+        <h2>Esa persona es</h2>
+
+        <label for="esa-persona"></label>
+         <select id="esa-persona" class="esapersonaEncuesta">
+           <option value="curioso">Curioso/a</option>
+           <option value="tierno">Tierno/a</option>
+           <option value="gracioso">Gracioso/a</option>
+           <option value="aburrido">Aburrido/a</option>
+           <option value="sociable">Sociable</option>
+           <option value="inteligente">Inteligente</option>
+           <option value="rebelde">Rebelde</option>
+        </select>
+        </div>
+
+        <div class="cuadroAzul">
+            <img src="img/numerocuatro.png" alt="" class="cuatroEncuesta">
+            <p>
+                Si te sabes su color favorito, responde.
+            </p>
+            <h2>
+                Mi color favorito es
+            </h2>
+            <label for="micolor-favorito"></label>
+            <select id="micolor-favorito" class="micolorEncuesta">
+                <option value="amarillo">Amarillo</option>
+                <option value="azul">Azul</option>
+                <option value="morado">Morado</option>
+                <option value="rosado">Rosado</option>
+                <option value="rojo">Rojo</option>
+                <option value="verde">Verde</option>
+           </select>
+
+           <h2>
+           Su color favorito es
+        </h2>
+        <label for="sucolor-favorito"></label>
+        <select id="sucolor-favorito" class="sucolorEncuesta">
+            <option value="amarillo">Amarillo</option>
+            <option value="azul">Azul</option>
+            <option value="morado">Morado</option>
+            <option value="rosado">Rosado</option>
+            <option value="rojo">Rojo</option>
+            <option value="verde">Verde</option>
+       </select>
+
+
+        </div>
+    </main>
+    <div class="botonesResultados">
+        <button type="submit" class="botonResultados">Resultado</button>
+        <button type="button" class="botonProbar">Probar con otros nombres</button>
+      </div>
+    <section class="resultadosTotal">
+        <h3 class="porcentajeResultado">0%</h3>
+        <h2>Solo amistad</h2>
+        <p class="textoResultado">
+          Aunque su relación se quede en la Friendzone, muchos amores nacen de la amistad. 
+          ¡Quién sabe! Pueden forjar una buena amistad, llena de complicidad y risas.
+        </p>
+        <img src="img/pareja_color.png" alt=""
+         class="imagenResultado">
+    </section>
+
+
     <script src="script.js"></script>
 </body>
 </html>

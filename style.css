@@ -1,86 +1,304 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Josefin Sans', sans-serif; /* Usar Josefin Sans para el texto */
+    font-family: "gelica", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-h1 {
-    font-family: 'josefin Sans', sans-serif; /* Aplica la fuente "Gelica" */
-    font-size: 2.5em;
-  color:#333;
+body {
+    margin: 0;
+    background-color: #fbe7c6;
+    color: #4a2c1a;
 }
-.calculadora {
-    max-width: 400px;
-    margin: auto;
-    background-color: #f2d7a8;
+
+.portada {
+    text-align: center;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
-h1 {
-    font-size: 1.8em;
-    color: #e63946;
+.imagenTitulo {
+    max-width: 50%;
+    margin: 0 auto;
 }
 
-h1 span {
-    color: #e63946;
-    font-weight: bold;
+.besoPortada {
+    position: absolute;
+    top: 50px;
+    left: 180px;
+    width: 150px;
+    height: auto;
 }
 
-p {
-    font-size: 1em;
-    margin: 10px 0;
+.portada p {
+    margin: 20px auto;
+    line-height: 1.2;
+    font-size: 18px;
+    width: 50%;
 }
 
-form label {
-    display: block;
-    font-weight: bold;
-    margin-top: 10px;
+.banderaPortadabajo {
+    max-width: 100%;
+
 }
 
-form input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 2px solid #e63946;
-    border-radius: 5px;
+.seccionNombres{
+    background-color: #e1b55c;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
 }
 
-.botones {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+.seccionNombres p {
+    margin-bottom: 20px;
+    font-size: 16px;
 }
 
-button {
-    background-color: #e63946;
-    color: white;
+.seccionNombres h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #d62828;
+}
+
+.botonNombre {
+    text-align: center;
+    width: 80%;
+    max-width: 300px;
     padding: 10px;
+    margin: 10px auto;
+    border: 3px solid #d62828;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #4a2c1a;
+}
+
+.botonNombre::placeholder {
+    color: #ada9a7;
+}
+
+.besoNombres {
+    position: absolute;
+    bottom: -25px;
+    right: 210px;
+    width: 150px;
+    height: auto;
+}
+
+.floresNombres {
+    position: absolute;
+    bottom: -25px;
+    left: 210px;
+    width: 160px;
+    height: auto;
+}
+
+.botonResponde {
+    background-color: #d62828;
+    color: #fbe7c6;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #b84c23;
-}
-
-.resultado {
     margin-top: 20px;
 }
 
-.porcentaje {
-    font-size: 2em;
-    font-weight: bold;
+.botonResponde:hover {
+    background-color: #b63c25;
 }
 
-.mensaje {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #b84c23;
+.encuestas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.detalle {
-    font-size: 0.9em;
-    color: #333;
+.cuadroRojo p{
+    color: #fff;
+}
+
+.cuadroRojo {
+    padding: 50px;
+    line-height: 1.5;
+    text-align: center;
+    background-color: #d62828;
+    color: #e1b55c;
+
+}
+
+.edadEncuesta{
+    border: 1px solid #e1b55c;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #d62828;
+    padding: 5px;
+}
+
+.unoEncuesta{
+    width: 150px;
+}
+
+input::placeholder{
+    color: #e1b55c;
+}
+
+.cuadroBeige {
+    padding: 50px;
+    line-height: 1.5;
+    text-align: center;
+    background-color: #fbe7c6;
+}
+
+.cuadroBeige h2{
+    color: #d62828;
+}
+
+.tusignoEncuesta{
+    border: 2px solid #d62828;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #fbe7c6;
+    padding: 5px;
+}
+
+.susignoEncuesta{
+    border: 2px solid #d62828;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #fbe7c6;
+    padding: 5px;
+}
+
+.dosEncuesta{
+    width: 150px;
+}
+
+.cuadroAmarillo p{
+    color: black;
+}
+
+.cuadroAmarillo h2{
+    color: #d62828;
+}
+
+.reconoceEncuesta{
+    border: 1px solid #d62828;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #fbe7c6;
+    padding: 5px;
+}
+
+.esapersonaEncuesta{
+    border: 1px solid #d62828;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #fbe7c6;
+    padding: 5px;
+}
+
+.cuadroAmarillo {
+    padding: 50px;
+    line-height: 1.5;
+    text-align: center;
+    background-color: #e1b55c;
+}
+
+.tresEncuesta{
+    width: 150px;
+}
+
+.cuadroAzul p{
+    color: black;
+}
+
+.cuadroAzul h2{
+    color: #d62828;
+}
+
+.cuadroAzul {
+    padding: 50px;
+    line-height: 1.5;
+    text-align: center;
+    background-color: #4db1a7;
+}
+
+.micolorEncuesta{
+    border: 1px solid #fbe7c6;;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #4db1a7;
+    padding: 5px;
+    color: #fbe7c6;
+}
+
+.sucolorEncuesta{
+    border: 1px solid #fbe7c6;;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #4db1a7;
+    padding: 5px;
+    color: #fbe7c6;
+}
+
+.cuatroEncuesta{
+    width: 150px;
+}
+
+.botonesResultados{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+.botonResultados{
+    background-color: #d62828;
+    color: #fbe7c6;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.botonProbar{
+    background-color: #d62828;
+    color: #fbe7c6;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.porcentajeResultado{
+    font-size: 150px;
+}
+
+.resultadosTotal h2{
+    color: #d62828;
+}
+
+.textoResultado{
+    width: 40%;
+    text-align: center;
+}
+
+.resultadosTotal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.3;
+}
+
+.imagenResultado{
+    
 }
